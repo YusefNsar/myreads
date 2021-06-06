@@ -20,26 +20,26 @@ const Home = ({ props }) => {
   const updateShelfs = (newShelf, book) => {
     update(book, newShelf)
       .then(() => {
-        if(newShelf !== book.shelf) {
+        if (newShelf !== book.shelf) {
           // delete
-          if(book.shelf === "currentlyReading") {
+          if (book.shelf === "currentlyReading") {
             setCrntRead((oldShelf) => oldShelf.filter(b => b.id !== book.id))
             book.shelf = "none"
-          } else if(book.shelf === "wantToRead") {
+          } else if (book.shelf === "wantToRead") {
             setWantRead((oldShelf) => oldShelf.filter(b => b.id !== book.id))
             book.shelf = "none"
-          } else if(book.shelf === "read") {
+          } else if (book.shelf === "read") {
             setRead((oldShelf) => oldShelf.filter(b => b.id !== book.id))
             book.shelf = "none"
           }
           // add
-          if(newShelf === "currentlyReading") {
+          if (newShelf === "currentlyReading") {
             book.shelf = "currentlyReading"
             setCrntRead((oldShelf) => [...oldShelf, book])
-          } else if(newShelf === "wantToRead") {
+          } else if (newShelf === "wantToRead") {
             book.shelf = "wantToRead"
             setWantRead((oldShelf) => [...oldShelf, book])
-          } else if(newShelf === "read") {
+          } else if (newShelf === "read") {
             book.shelf = "read"
             setRead((oldShelf) => [...oldShelf, book])
           } else {
@@ -67,6 +67,7 @@ const Home = ({ props }) => {
         </Link>
       </div>
     </div>
-)};
+  )
+};
 
 export default Home;

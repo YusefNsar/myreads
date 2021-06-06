@@ -1,4 +1,6 @@
 # MyReads Project
+Reads Organizing tool which helps in categorizing the books you want to read, the books you are currently reading and have read, while exploring other books from multiple categories.
+
 
 ### Installation
 Made using yarn package manager, to start the web app:
